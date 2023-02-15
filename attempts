@@ -1,0 +1,13 @@
+-- for table ending with contact_attempts_summary_vf
+select 
+  b.vb_voterid, -- this is the state file id 
+  a.vb_voterbase_id, -- this is the primary id 
+  a.datecreated, 
+  a.datecanvassed, 
+  a.contacttypename,
+  a.resultshortname, 
+  a.comitteename 
+from tmc_van.[yourorg]_contact_attempts_summary_vf a 
+-- replace '[yourorg]' with the acronym your organization's attempts summary table references
+left join ts.tx_current b using (vb_voterbase_id) 
+  where datecanvassed :: date BETWEEN 2021-01-01 AND 2022-12-31;
