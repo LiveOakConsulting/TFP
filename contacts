@@ -10,4 +10,4 @@ select
 from tmc_van.[yourorg]_survey_responses_summary_vf a 
 -- replace '[yourorg]' with the acronym your organization's attempts summary table references
 left join ts.tx_current b using (vb_voterbase_id) 
-  where datecanvassed :: date BETWEEN 2021-01-01 AND 2022-12-31
+  where datecanvassed :: date BETWEEN 2021-01-01 AND 2022-12-31;
